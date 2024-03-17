@@ -7,7 +7,7 @@ variable "region" {
 variable "environment_name" {
   description = "Define environment_name for resources"
   type        = string
-  default     = "studio-ghibli"
+  default     = "code-analysis"
 }
 
 variable "vpc_cidr_block" {
@@ -19,7 +19,7 @@ variable "vpc_cidr_block" {
 variable "container_name" {
   description = "Define container name"
   type        = string
-  default     = "studio-ghibli-container"
+  default     = "Code Analysis"
 }
 
 
@@ -29,18 +29,3 @@ variable "ubuntu-ami" {
   default     = "ami-0c7217cdde317cfec"
 }
 
-variable "db_name" {
-  description = "RDS database username"
-  default="mydb"
-}
-
-
-variable "db_username" {
-  description = "RDS database username"
-  default="admin"
-}
-
-variable "db_password" {
-  description = "RDS database password"
-  default= "StudioGhibli2023"
-}

@@ -4,8 +4,8 @@
 
 resource "aws_instance" "bastion" {
   
-  ami           = var.ubuntu-ami # Amazon Linux 2 AMI, change as needed
-  instance_type = "t2.micro" # Adjust instance type as needed
+  ami           = var.ubuntu-ami # 
+  instance_type = "t2.micro" 
   subnet_id          = aws_subnet.public_subnet_1.id
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]
   key_name      = "bastion" # Change to your key pair name
@@ -22,12 +22,11 @@ resource "aws_security_group" "bastion_sg" {
   description = "Security group for bastion host"
 
   ingress {
-    description = "Allow ssh from MyIp"
+    description = "Allow ssh"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  #use my ip for security
-
+    cidr_blocks = ["0.0.0.0/0"] 
   }
 
 
